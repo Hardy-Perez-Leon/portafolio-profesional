@@ -1,0 +1,323 @@
+{% extends "portfolio/base.html" %} {% load static %} {% block title %}
+Portafolio | Hardy Pérez {% endblock %} {% block content %}
+
+<section id="inicio" class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-contenido">
+    <div class="row align-items-center min-vh-100">
+      <div class="col-lg-7">
+        <p class="hero-saludo"></p>
+
+        <h2 class="hero-titulo">
+          Hardy Robinson
+          <br />
+          Pérez <span>León</span>
+        </h2>
+
+        <div class="linea-azul"></div>
+
+        <h2 class="hero-profesion">
+          Bioquímico y Desarrollador Full Stack Python
+        </h2>
+
+        <p class="hero-descripcion">
+          Desarrollo aplicaciones web utilizando Python, Django, PostgreSQL,
+          HTML, CSS, Bootstrap y JavaScript.
+        </p>
+
+<div class="hero-botones">
+
+    <a href="{% static 'cv/CV_Hardy_Perez.pdf' %}"
+       class="btn btn-primary"
+       download>
+        <i class="bi bi-download me-2"></i>
+        Descargar CV
+    </a>
+
+    <a href="#contacto"
+       class="btn btn-outline-light">
+        <i class="bi bi-envelope me-2"></i>
+        Contacto
+    </a>
+
+</div>
+      </div>
+
+      <div class="col-lg-5 text-center mt-5 mt-lg-0">
+        <div class="foto-contenedor">
+          <img
+            src="{% static 'img/perfil.png' %}"
+            alt="Fotografía profesional de Hardy Pérez"
+            class="foto-perfil"
+          />
+        </div>
+      </div>
+    </div>
+
+    <a href="#sobre-mi" class="scroll-indicador">
+      <i class="bi bi-mouse"></i>
+      <span>Desplázate</span>
+      <i class="bi bi-chevron-down"></i>
+    </a>
+  </div>
+</section>
+
+<section id="sobre-mi" class="seccion seccion-oscura">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-8">
+        <h2 class="titulo-seccion">Sobre mí</h2>
+
+        <p>
+          Bioquímico con experiencia en biología molecular, microbiología,
+          análisis fisicoquímico y control de calidad. Actualmente me encuentro
+          en formación como Desarrollador Full Stack Python, adquiriendo
+          conocimientos y desarrollando proyectos con tecnologías modernas.
+        </p>
+
+        <p>
+          Mi objetivo es integrar mi experiencia científica con el desarrollo de
+          software para crear soluciones digitales eficientes, organizadas y
+          mantenibles.
+        </p>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="enfoque-card">
+          <div class="enfoque-icono">
+            <i class="bi bi-person"></i>
+          </div>
+
+          <div>
+            <h3>Enfoque</h3>
+
+            <p>
+              Integrar mi experiencia científica con el desarrollo de software
+              para crear soluciones digitales eficientes, organizadas y
+              mantenibles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="proyectos" class="seccion seccion-azulada">
+  <div class="container">
+    <h2 class="titulo-seccion">Proyectos</h2>
+
+    <div class="row g-4">
+      {% for proyecto in proyectos %}
+      <div class="col-md-6 col-lg-4">
+        <article class="proyecto-card">
+          {% if proyecto.imagen %}
+          <img
+            src="{{ proyecto.imagen.url }}"
+            alt="{{ proyecto.titulo }}"
+            class="proyecto-imagen"
+          />
+          {% endif %}
+
+          <div class="proyecto-contenido">
+            <h3>{{ proyecto.titulo }}</h3>
+
+            <p>{{ proyecto.descripcion }}</p>
+
+            <p class="proyecto-tecnologias">{{ proyecto.tecnologias }}</p>
+
+            <div class="proyecto-botones">
+              {% if proyecto.enlace_github %}
+              <a
+                href="{{ proyecto.enlace_github }}"
+                class="btn btn-outline-light"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+              {% endif %} {% if proyecto.enlace_demo %}
+              <a
+                href="{{ proyecto.enlace_demo }}"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Demo
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+      </div>
+      {% empty %}
+      <div class="col-12">
+        <div class="alert alert-info">Aún no hay proyectos registrados.</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="experiencia" class="seccion seccion-oscura">
+  <div class="container">
+    <h2 class="titulo-seccion">Experiencia</h2>
+
+    <div class="experiencia-item">
+      <h3>Bioquímico y analista de laboratorio</h3>
+
+      <p>
+        Experiencia en biología molecular, microbiología, análisis
+        fisicoquímico, diagnóstico molecular y control de calidad.
+      </p>
+    </div>
+
+    <div class="experiencia-item">
+      <h3>Desarrollo Full Stack Python</h3>
+
+      <p>
+        Actualmente en formación, desarrollando aplicaciones web con Django,
+        bases de datos relacionales y tecnologías frontend.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="tecnologias" class="seccion seccion-azulada">
+  <div class="container">
+    <h2 class="titulo-seccion">Tecnologías</h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="tarjeta-tecnologia">
+          <i class="bi bi-code-slash"></i>
+          <h3>Frontend</h3>
+          <p>HTML5, CSS3, Bootstrap 5 y JavaScript.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tarjeta-tecnologia">
+          <i class="bi bi-server"></i>
+          <h3>Backend</h3>
+          <p>Python, Django, ORM, PostgreSQL y SQLite.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tarjeta-tecnologia">
+          <i class="bi bi-tools"></i>
+          <h3>Herramientas</h3>
+          <p>Git, GitHub, Visual Studio Code y pgAdmin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cv" class="seccion seccion-oscura">
+  <div class="container">
+    <div class="row align-items-center mb-4">
+      <div class="col-lg-8">
+        <h2 class="titulo-seccion">
+          Currículum Vitae
+        </h2>
+
+        <p class="lead">
+          Puedes revisar mi currículum directamente en esta página
+          o descargarlo en formato PDF.
+        </p>
+      </div>
+
+      <div class="col-lg-4 text-lg-end">
+        <a
+          href="{% static 'cv/CV_Hardy_Perez.pdf' %}"
+          class="btn btn-primary btn-lg"
+          download
+        >
+          <i class="bi bi-download me-2"></i>
+          Descargar CV
+        </a>
+      </div>
+    </div>
+
+    <div class="cv-visor">
+      <iframe
+        src="{% static 'cv/CV_Hardy_Perez.pdf' %}"
+        title="Currículum Vitae de Hardy Pérez"
+        loading="lazy"
+      >
+      </iframe>
+    </div>
+
+    <div class="text-center mt-4">
+      <a
+        href="{% static 'cv/CV_Hardy_Perez.pdf' %}"
+        class="btn btn-outline-light"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="bi bi-box-arrow-up-right me-2"></i>
+        Abrir CV en una pestaña nueva
+      </a>
+    </div>
+  </div>
+</section>
+  <div class="container text-center">
+    <h2 class="titulo-seccion titulo-centrado">Currículum Vitae</h2>
+
+    <p class="mb-4">
+      Descarga mi currículum para conocer en detalle mi experiencia, formación y
+      competencias.
+    </p>
+
+    <a
+      href="{% static 'cv/CV_Hardy_Perez.pdf' %}"
+      class="btn btn-primary btn-lg"
+      download
+    >
+      <i class="bi bi-download me-2"></i>
+      Descargar CV
+    </a>
+  </div>
+</section>
+
+<section id="contacto" class="seccion seccion-azulada">
+  <div class="container">
+    <h2 class="titulo-seccion">Contacto</h2>
+
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <p class="lead">
+          Estoy disponible para oportunidades relacionadas con desarrollo web,
+          laboratorio, control de calidad y tecnología.
+        </p>
+
+        <p>
+          <i class="bi bi-geo-alt me-2"></i>
+          Puerto Varas, Chile
+        </p>
+
+        <p>
+          <i class="bi bi-envelope me-2"></i>
+          robinson.leonhp@gmail.com
+        </p>
+
+        <p>
+          <i class="bi bi-github me-2"></i>
+          github.com/Hardy-Perez-Leon
+        </p>
+
+        <p>
+          <i class="bi bi-linkedin me-2"></i>
+          LinkedIn
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
