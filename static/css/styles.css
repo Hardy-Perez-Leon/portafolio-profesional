@@ -2343,6 +2343,114 @@ section::after {
   }
 }
 
+/*======================================================
+  RESPONSIVE CV - TABLET
+======================================================*/
+
+@media (max-width: 991px) {
+  .cv-section {
+    padding: 70px 0;
+  }
+
+  .cv-moderno {
+    grid-template-columns: 1fr;
+    gap: 35px;
+
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .cv-informacion {
+    border-right: none;
+    border-bottom: 1px solid rgba(91, 192, 255, 0.15);
+
+    padding-bottom: 30px;
+  }
+
+  .cv-visor {
+    padding: 15px;
+  }
+
+  .cv-iframe-contenedor {
+    height: 700px;
+  }
+}
+
+/*======================================================
+  RESPONSIVE CV - TABLET
+======================================================*/
+
+@media (max-width: 991px) {
+  .cv-section {
+    padding: 70px 0;
+  }
+
+  .cv-moderno {
+    grid-template-columns: 1fr;
+    gap: 35px;
+
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .cv-informacion {
+    border-right: none;
+    border-bottom: 1px solid rgba(91, 192, 255, 0.15);
+
+    padding-bottom: 30px;
+  }
+
+  .cv-visor {
+    padding: 15px;
+  }
+
+  .cv-iframe-contenedor {
+    height: 700px;
+  }
+}
+
+/*======================================================
+  RESPONSIVE CV - TELEFONOS
+======================================================*/
+
+@media (max-width: 576px) {
+  .cv-section {
+    padding: 55px 0;
+  }
+
+  .cv-moderno {
+    padding: 18px;
+  }
+
+  .cv-informacion h3 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  .cv-texto {
+    font-size: 0.9rem;
+  }
+
+  .cv-lista-icono {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+
+    font-size: 1.1rem;
+  }
+
+  .cv-lista-item strong {
+    font-size: 0.88rem;
+  }
+
+  .cv-lista-item span {
+    font-size: 0.72rem;
+  }
+
+  .cv-iframe-contenedor {
+    height: 520px;
+  }
+}
 /* =====================================================
    CONTACTO FINAL — DISEÑO COMPACTO
    PEGAR AL FINAL DE STYLES.CSS
