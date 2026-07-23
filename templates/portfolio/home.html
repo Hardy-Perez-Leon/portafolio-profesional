@@ -1,323 +1,1106 @@
-{% extends "portfolio/base.html" %} {% load static %} {% block title %}
-Portafolio | Hardy Pérez {% endblock %} {% block content %}
+{% extends "portfolio/base.html" %} {% load static %} {% block title %} Hardy
+Pérez León | Portafolio Profesional {% endblock %} {% block content %}
+
+<!-- ===================================== -->
+<!-- HERO -->
+<!-- ===================================== -->
 
 <section id="inicio" class="hero">
   <div class="hero-overlay"></div>
+  <div class="hero-luz hero-luz-uno"></div>
+  <div class="hero-luz hero-luz-dos"></div>
 
   <div class="container hero-contenido">
     <div class="row align-items-center min-vh-100">
       <div class="col-lg-7">
-        <p class="hero-saludo"></p>
+        <span class="hero-etiqueta">
+          Bioquímico · Desarrollo Full Stack Python
+        </span>
 
-        <h2 class="hero-titulo">
-          Hardy Robinson
+        <h1 class="hero-titulo">
+          Ciencia y
           <br />
-          Pérez <span>León</span>
-        </h2>
-
-        <div class="linea-azul"></div>
-
-        <h2 class="hero-profesion">
-          Bioquímico y Desarrollador Full Stack Python
-        </h2>
+          <span>tecnología.</span>
+        </h1>
 
         <p class="hero-descripcion">
-          Desarrollo aplicaciones web utilizando Python, Django, PostgreSQL,
-          HTML, CSS, Bootstrap y JavaScript.
+          Bioquímico con más de siete años de experiencia en microbiología,
+          biología molecular, análisis fisicoquímico y control de calidad.
+          Actualmente complemento mi trayectoria científica con formación en
+          Desarrollo Full Stack Python.
         </p>
 
-<div class="hero-botones">
+   
+        <div class="hero-botones">
+          <a href="#proyectos" class="btn btn-primary">
+            Ver proyectos
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
 
-    <a href="{% static 'cv/CV_Hardy_Perez.pdf' %}"
-       class="btn btn-primary"
-       download>
-        <i class="bi bi-download me-2"></i>
-        Descargar CV
+          <a
+            href="{% static 'cv/cv_hardy_perez_leon.pdf' %}"
+            class="btn btn-outline-light"
+            download
+          >
+            Descargar CV
+            <i class="bi bi-download ms-2"></i>
+          </a>
+        </div>
+
+        <div class="hero-redes">
+
+    <a href="https://github.com/Hardy-Perez-Leon" target="_blank">
+
+        <img src="{% static 'logos/github.png' %}"
+             alt="GitHub"
+             class="hero-logo logo-blanco">
+
     </a>
 
-    <a href="#contacto"
-       class="btn btn-outline-light">
-        <i class="bi bi-envelope me-2"></i>
-        Contacto
+    <a href="#" target="_blank">
+
+        <img src="{% static 'logos/linkedin.png' %}"
+             alt="LinkedIn"
+             class="hero-logo">
+
     </a>
 
-</div>
+    <a href="mailto:robinson.leonhp@gmail.com">
+
+        <img src="{% static 'logos/email.png' %}"
+             alt="Correo"
+             class="hero-logo">
+    </a>
+        </div>
       </div>
 
       <div class="col-lg-5 text-center mt-5 mt-lg-0">
-        <div class="foto-contenedor">
+        <div class="foto-wrapper">
+          <div class="foto-orbita foto-orbita-uno"></div>
+          <div class="foto-orbita foto-orbita-dos"></div>
+
+          <div class="foto-contenedor">
+            <img
+              src="{% static 'img/perfil.png' %}"
+              alt="Fotografía profesional de Hardy Pérez León"
+              class="foto-perfil"
+            />
+          </div>
+
+          <div class="foto-etiqueta">
+            <i class="bi bi-flask"></i>
+            <span>Ciencia y tecnología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ===================================== -->
+<!-- ESTADÍSTICAS -->
+<!-- ===================================== -->
+
+<div class="hero-estadisticas">
+  <div class="container">
+    <div class="row g-3">
+
+      <div class="col-6 col-lg-3">
+        <article class="estadistica-card">
+          <div class="estadistica-icono">
+            <img
+              src="{% static 'logos/experiencia.png' %}"
+              alt="Experiencia profesional"
+            >
+          </div>
+
+          <div class="estadistica-contenido">
+            <strong>7+</strong>
+            <span>Años de experiencia</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <article class="estadistica-card">
+          <div class="estadistica-icono">
+            <img
+              src="{% static 'logos/laboratorio.png' %}"
+              alt="Técnicas de laboratorio"
+            >
+          </div>
+
+          <div class="estadistica-contenido">
+            <strong>20+</strong>
+            <span>Técnicas de laboratorio</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <article class="estadistica-card">
+          <div class="estadistica-icono">
+            <img
+              src="{% static 'logos/proyectos.png' %}"
+              alt="Proyectos desarrollados"
+            >
+          </div>
+
+          <div class="estadistica-contenido">
+            <strong>5+</strong>
+            <span>Proyectos web</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <article class="estadistica-card">
+          <div class="estadistica-icono">
+            <img
+              src="{% static 'logos/tecnologia.png' %}"
+              alt="Tecnologías utilizadas"
+            >
+          </div>
+
+          <div class="estadistica-contenido">
+            <strong>10+</strong>
+            <span>Tecnologías utilizadas</span>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- EXPERIENCIA -->
+<!-- ===================================== -->
+
+<section id="experiencia" class="seccion experiencia-timeline">
+  <div class="container">
+
+    <header class="encabezado-seccion experiencia-timeline__encabezado">
+      <span class="etiqueta-seccion">
+        Experiencia profesional
+      </span>
+
+      <h2>
+        Más de siete años de experiencia científica
+      </h2>
+
+      <p>
+        Trayectoria en laboratorios farmacéuticos y acreditados,
+        microbiología, biología molecular, análisis fisicoquímico
+        y control de calidad.
+      </p>
+
+      <div class="experiencia-timeline__introduccion">
+        <img
+          src="{% static 'logos/laboratorio.png' %}"
+          alt=""
+          aria-hidden="true"
+        >
+
+        <p>
+          A continuación, se detalla mi trayectoria en laboratorios de alta
+          complejidad, destacando las responsabilidades clave, metodologías
+          analíticas y estándares de calidad asegurados en cada rol:
+        </p>
+      </div>
+    </header>
+
+    <div class="timeline-profesional">
+
+      <!-- 1. Grünenthal -->
+      <article class="timeline-item timeline-item--izquierda">
+        <div class="timeline-conector"></div>
+
+        <div class="timeline-icono">
           <img
-            src="{% static 'img/perfil.png' %}"
-            alt="Fotografía profesional de Hardy Pérez"
-            class="foto-perfil"
-          />
+            src="{% static 'logos/microbiologia.png' %}"
+            alt="Microbiología"
+          >
         </div>
-      </div>
-    </div>
 
-    <a href="#sobre-mi" class="scroll-indicador">
-      <i class="bi bi-mouse"></i>
-      <span>Desplázate</span>
-      <i class="bi bi-chevron-down"></i>
-    </a>
+        <div class="timeline-card">
+          <div class="timeline-card__cabecera">
+            <div>
+              <h3>Grünenthal</h3>
+
+              <h4>
+                Analista de Microbiología – Quality Control
+              </h4>
+            </div>
+
+            <span class="timeline-fecha">
+              Ene. 2025 – Jul. 2025
+            </span>
+          </div>
+
+          <p class="timeline-ubicacion">
+            <i class="bi bi-geo-alt"></i>
+            Santiago, Chile
+          </p>
+
+          <ul class="timeline-funciones">
+            <li>Control microbiológico de sistemas de agua.</li>
+            <li>
+              Análisis fisicoquímicos de TOC, dureza, cloruros y otros
+              parámetros.
+            </li>
+            <li>Identificación microbiológica.</li>
+            <li>
+              Gestión de documentación técnica y registros analíticos.
+            </li>
+            <li>
+              Implementación de medidas correctivas ante desviaciones.
+            </li>
+          </ul>
+
+          <div class="timeline-tags">
+            <span>Microbiología</span>
+            <span>TOC</span>
+            <span>BPL</span>
+            <span>BPM</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. ADL Diagnostic -->
+      <article class="timeline-item timeline-item--derecha">
+        <div class="timeline-conector"></div>
+
+        <div class="timeline-icono">
+          <img
+            src="{% static 'logos/adn.png' %}"
+            alt="Biología molecular"
+          >
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-card__cabecera">
+            <div>
+              <h3>ADL Diagnostic SpA</h3>
+
+              <h4>
+                Analista y Encargado de Biología Molecular
+              </h4>
+            </div>
+
+            <span class="timeline-fecha">
+              Jul. 2022 – Nov. 2024
+            </span>
+          </div>
+
+          <p class="timeline-ubicacion">
+            <i class="bi bi-geo-alt"></i>
+            Puerto Varas, Chile
+          </p>
+
+          <ul class="timeline-funciones">
+            <li>Extracción y purificación de ADN y ARN.</li>
+            <li>Diagnóstico molecular mediante qPCR.</li>
+            <li>Análisis, interpretación y validación de resultados.</li>
+            <li>Elaboración de informes técnicos.</li>
+            <li>
+              Diseño e implementación de protocolos estandarizados.
+            </li>
+            <li>
+              Planificación de actividades y control de equipos e insumos.
+            </li>
+          </ul>
+
+          <div class="timeline-tags">
+            <span>PCR</span>
+            <span>qPCR</span>
+            <span>ADN/ARN</span>
+            <span>Bioseguridad</span>
+            <span>ISO 17025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Salmones Austral -->
+      <article class="timeline-item timeline-item--izquierda">
+        <div class="timeline-conector"></div>
+
+        <div class="timeline-icono">
+          <img
+            src="{% static 'logos/pez.png' %}"
+            alt="Industria acuícola"
+          >
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-card__cabecera">
+            <div>
+              <h3>Salmones Austral</h3>
+
+              <h4>
+                Encargado del Centro de Testeo COVID-19
+              </h4>
+            </div>
+
+            <span class="timeline-fecha">
+              Dic. 2021 – Jun. 2022
+            </span>
+          </div>
+
+          <p class="timeline-ubicacion">
+            <i class="bi bi-geo-alt"></i>
+            Puerto Montt, Chile
+          </p>
+
+          <ul class="timeline-funciones">
+            <li>Recepción y procesamiento de muestras.</li>
+            <li>Diagnóstico mediante PCR-LAMP.</li>
+            <li>Capacitación y coordinación de personal.</li>
+            <li>Control sanitario y cumplimiento de bioseguridad.</li>
+          </ul>
+
+          <div class="timeline-tags">
+            <span>PCR-LAMP</span>
+            <span>COVID-19</span>
+            <span>Bioseguridad</span>
+            <span>Coordinación</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. SGS -->
+      <article class="timeline-item timeline-item--derecha">
+        <div class="timeline-conector"></div>
+
+        <div class="timeline-icono">
+          <img
+            src="{% static 'logos/laboratorio.png' %}"
+            alt="Laboratorio"
+          >
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-card__cabecera">
+            <div>
+              <h3>SGS Chile</h3>
+
+              <h4>Analista de Microbiología</h4>
+            </div>
+
+            <span class="timeline-fecha">
+              Mar. 2018 – Nov. 2021
+            </span>
+          </div>
+
+          <p class="timeline-ubicacion">
+            <i class="bi bi-geo-alt"></i>
+            Puerto Varas, Chile
+          </p>
+
+          <ul class="timeline-funciones">
+            <li>Procesamiento de muestras.</li>
+            <li>Microbiología de alimentos.</li>
+            <li>Análisis fisicoquímicos de aguas.</li>
+            <li>
+              Aplicación de métodos clásicos, inmunológicos y moleculares.
+            </li>
+            <li>Elaboración de informes técnicos.</li>
+          </ul>
+
+          <div class="timeline-tags">
+            <span>Microbiología</span>
+            <span>Fisicoquímica</span>
+            <span>Alimentos</span>
+            <span>ISO 17025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. ETECMA -->
+      <article class="timeline-item timeline-item--izquierda">
+        <div class="timeline-conector"></div>
+
+        <div class="timeline-icono">
+          <img
+            src="{% static 'logos/quimica.png' %}"
+            alt="Biología molecular y microbiología"
+          >
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-card__cabecera">
+            <div>
+              <h3>ETECMA</h3>
+
+              <h4>
+                Analista de Biología Molecular y Microbiología
+              </h4>
+            </div>
+
+            <span class="timeline-fecha">
+              Ene. 2017 – Feb. 2018
+            </span>
+          </div>
+
+          <p class="timeline-ubicacion">
+            <i class="bi bi-geo-alt"></i>
+            Puerto Montt, Chile
+          </p>
+
+          <ul class="timeline-funciones">
+            <li>Procesamiento de muestras biológicas.</li>
+            <li>Extracción de material genético.</li>
+            <li>Diagnóstico molecular.</li>
+            <li>Análisis microbiológicos.</li>
+            <li>Apoyo a procesos de control de calidad.</li>
+          </ul>
+
+          <div class="timeline-tags">
+            <span>Biología molecular</span>
+            <span>Microbiología</span>
+            <span>PCR</span>
+            <span>Calidad</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
-<section id="sobre-mi" class="seccion seccion-oscura">
+<!-- ===================================== -->
+<!-- FORMACIÓN FULL STACK -->
+<!-- ===================================== -->
+
+<section id="formacion" class="seccion fullstack">
   <div class="container">
-    <div class="row g-5 align-items-start">
-      <div class="col-lg-8">
-        <h2 class="titulo-seccion">Sobre mí</h2>
+    <header class="encabezado-seccion">
+      <span class="etiqueta-seccion"> Desarrollo Full Stack </span>
 
-        <p>
-          Bioquímico con experiencia en biología molecular, microbiología,
-          análisis fisicoquímico y control de calidad. Actualmente me encuentro
-          en formación como Desarrollador Full Stack Python, adquiriendo
-          conocimientos y desarrollando proyectos con tecnologías modernas.
-        </p>
+      <h2>Formación en curso</h2>
 
-        <p>
-          Mi objetivo es integrar mi experiencia científica con el desarrollo de
-          software para crear soluciones digitales eficientes, organizadas y
-          mantenibles.
-        </p>
-      </div>
+      <p>
+        Actualmente complemento mi experiencia como Bioquímico con formación en
+        Desarrollo Full Stack Python, desarrollando aplicaciones web con Django,
+        PostgreSQL y tecnologías frontend modernas.
+      </p>
+    </header>
 
-      <div class="col-lg-4">
-        <div class="enfoque-card">
-          <div class="enfoque-icono">
-            <i class="bi bi-person"></i>
-          </div>
+  
+<div class="tecnologias">
 
-          <div>
-            <h3>Enfoque</h3>
-
-            <p>
-              Integrar mi experiencia científica con el desarrollo de software
-              para crear soluciones digitales eficientes, organizadas y
-              mantenibles.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/python.png' %}" class="tech-logo" alt="Python">
+        <span>Python</span>
     </div>
-  </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/django.png' %}" class="tech-logo django-logo" alt="Django">
+        <span>Django</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/postgresql.png' %}" class="tech-logo" alt="PostgreSQL">
+        <span>PostgreSQL</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/sql.png' %}" class="tech-logo" alt="SQL">
+        <span>SQL</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/html5.png' %}" class="tech-logo" alt="HTML5">
+        <span>HTML5</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/css3.png' %}" class="tech-logo" alt="CSS3">
+        <span>CSS3</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/javascript.png' %}" class="tech-logo" alt="JavaScript">
+        <span>JavaScript</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/bootstrap.png' %}" class="tech-logo" alt="Bootstrap">
+        <span>Bootstrap</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/git.png' %}" class="tech-logo" alt="Git">
+        <span>Git</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/github.png' %}" class="tech-logo logo-blanco" alt="GitHub">
+        <span>GitHub</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/render.png' %}" class="tech-logo" alt="Render">
+        <span>Render</span>
+    </div>
+
+    <div class="tecnologia-card">
+        <img src="{% static 'logos/vscode.png' %}" class="tech-logo" alt="Visual Studio Code">
+        <span>VS Code</span>
+    </div>
+
+</div>
 </section>
 
+<!-- ===================================== -->
+<!-- PROYECTOS -->
+<!-- ===================================== -->
 
-
-<section id="proyectos" class="seccion seccion-azulada">
+<section id="proyectos" class="seccion proyectos">
   <div class="container">
-    <h2 class="titulo-seccion">Proyectos</h2>
+    <header class="encabezado-seccion">
+      <span class="etiqueta-seccion"> Proyectos </span>
+
+      <h2>Proyectos destacados</h2>
+
+      <p>
+        Aplicaciones desarrolladas durante mi formación en Desarrollo Full Stack
+        Python, utilizando Django, PostgreSQL y tecnologías frontend modernas.
+      </p>
+    </header>
 
     <div class="row g-4">
-      {% for proyecto in proyectos %}
-      <div class="col-md-6 col-lg-4">
+      <!-- Proyecto 1 -->
+      <div class="col-lg-6">
         <article class="proyecto-card">
-          {% if proyecto.imagen %}
           <img
-            src="{{ proyecto.imagen.url }}"
-            alt="{{ proyecto.titulo }}"
-            class="proyecto-imagen"
+            src="{% static 'img/proyecto_portafolio.jpg' %}"
+            alt="Portafolio Profesional"
           />
-          {% endif %}
 
-          <div class="proyecto-contenido">
-            <h3>{{ proyecto.titulo }}</h3>
+          <div class="proyecto-body">
+            <h3>Portafolio Profesional</h3>
 
-            <p>{{ proyecto.descripcion }}</p>
+            <p>
+              Sitio web personal desarrollado con Django, Bootstrap y
+              PostgreSQL.
+            </p>
 
-            <p class="proyecto-tecnologias">{{ proyecto.tecnologias }}</p>
+            <div class="proyecto-stack">
+  <span class="proyecto-stack-item" data-nombre="Python">
+    <img
+      src="{% static 'logos/python.png' %}"
+      alt="Python"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="Django">
+    <img
+      src="{% static 'logos/django.png' %}"
+      alt="Django"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="Bootstrap">
+    <img
+      src="{% static 'logos/bootstrap.png' %}"
+      alt="Bootstrap"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="Render">
+    <img
+      src="{% static 'logos/render.png' %}"
+      alt="Render"
+    >
+  </span>
+</div>
 
             <div class="proyecto-botones">
-              {% if proyecto.enlace_github %}
-              <a
-                href="{{ proyecto.enlace_github }}"
-                class="btn btn-outline-light"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              {% endif %} {% if proyecto.enlace_demo %}
-              <a
-                href="{{ proyecto.enlace_demo }}"
-                class="btn btn-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Demo
-              </a>
-              {% endif %}
+              <a href="#" class="btn btn-primary"> GitHub </a>
             </div>
           </div>
         </article>
       </div>
-      {% empty %}
-      <div class="col-12">
-        <div class="alert alert-info">Aún no hay proyectos registrados.</div>
+
+      <!-- Proyecto 2 -->
+      <div class="col-lg-6">
+        <article class="proyecto-card">
+          <img
+            src="{% static 'img/biblioteca.png' %}"
+            alt="Biblioteca"
+          />
+
+          <div class="proyecto-body">
+            <h3>Sistema Biblioteca Django</h3>
+
+            <p>CRUD desarrollado con Django ORM y PostgreSQL.</p>
+
+         <div class="proyecto-stack">
+  <span class="proyecto-stack-item" data-nombre="Django">
+    <img
+      src="{% static 'logos/django.png' %}"
+      alt="Django"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="PostgreSQL">
+    <img
+      src="{% static 'logos/postgresql.png' %}"
+      alt="PostgreSQL"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="Python">
+    <img
+      src="{% static 'logos/python.png' %}"
+      alt="Python"
+    >
+  </span>
+</div>
+
+            <div class="proyecto-botones">
+              <a href="#" class="btn btn-primary"> GitHub </a>
+            </div>
+          </div>
+        </article>
       </div>
-      {% endfor %}
+
+      <!-- Proyecto 3 -->
+      <div class="col-lg-6">
+        <article class="proyecto-card">
+          <img src="{% static 'img/blog-django.png' %}" alt="Blog Django" />
+
+          <div class="proyecto-body">
+            <h3>Blog Django</h3>
+
+            <p>Aplicación para gestión de publicaciones mediante Django.</p>
+
+           <div class="proyecto-stack">
+  <span class="proyecto-stack-item" data-nombre="Django">
+    <img
+      src="{% static 'logos/django.png' %}"
+      alt="Django"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="Bootstrap">
+    <img
+      src="{% static 'logos/bootstrap.png' %}"
+      alt="Bootstrap"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="HTML5">
+    <img
+      src="{% static 'logos/html5.png' %}"
+      alt="HTML5"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="CSS3">
+    <img
+      src="{% static 'logos/css3.png' %}"
+      alt="CSS3"
+    >
+  </span>
+</div>
+
+            <div class="proyecto-botones">
+              <a href="#" class="btn btn-primary"> GitHub </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Proyecto 4 -->
+      <div class="col-lg-6">
+        <article class="proyecto-card">
+          <img
+            src="{% static 'img/ecommerce.jpg' %}"
+            alt="Ecommerce"
+          />
+
+          <div class="proyecto-body">
+            <h3>Ecommerce Django</h3>
+
+            <p>
+              Plataforma ecommerce con catálogo, carrito y panel de
+              administración.
+            </p>
+
+           <div class="proyecto-stack">
+  <span class="proyecto-stack-item" data-nombre="Django">
+    <img
+      src="{% static 'logos/django.png' %}"
+      alt="Django"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="PostgreSQL">
+    <img
+      src="{% static 'logos/postgresql.png' %}"
+      alt="PostgreSQL"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="Bootstrap">
+    <img
+      src="{% static 'logos/bootstrap.png' %}"
+      alt="Bootstrap"
+    >
+  </span>
+
+  <span class="proyecto-stack-item" data-nombre="JavaScript">
+    <img
+      src="{% static 'logos/javascript.png' %}"
+      alt="JavaScript"
+    >
+  </span>
+</div>
+            <div class="proyecto-botones">
+              <a href="#" class="btn btn-primary"> GitHub </a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="experiencia" class="seccion seccion-oscura">
+<!-- ===================================== -->
+<!-- CURRICULUM -->
+<!-- ===================================== -->
+<section id="cv" class="cv-section seccion">
   <div class="container">
-    <h2 class="titulo-seccion">Experiencia</h2>
 
-    <div class="experiencia-item">
-      <h3>Bioquímico y analista de laboratorio</h3>
+    <div class="encabezado-seccion">
+      <span class="etiqueta-seccion">Currículum Vitae</span>
+
+      <h2>Conoce mi perfil profesional</h2>
 
       <p>
-        Experiencia en biología molecular, microbiología, análisis
-        fisicoquímico, diagnóstico molecular y control de calidad.
+        Consulta mi currículum para revisar mi trayectoria profesional,
+        certificaciones, proyectos y datos de contacto.
       </p>
     </div>
 
-    <div class="experiencia-item">
-      <h3>Desarrollo Full Stack Python</h3>
+    <div class="cv-moderno">
 
-      <p>
-        Actualmente en formación, desarrollando aplicaciones web con Django,
-        bases de datos relacionales y tecnologías frontend.
-      </p>
-    </div>
-  </div>
-</section>
+      <!-- PANEL IZQUIERDO -->
+      <div class="cv-informacion">
 
-<section id="tecnologias" class="seccion seccion-azulada">
-  <div class="container">
-    <h2 class="titulo-seccion">Tecnologías</h2>
+        <span class="cv-profesion">
+          Bioquímico · Desarrollo Full Stack Python
+        </span>
 
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="tarjeta-tecnologia">
-          <i class="bi bi-code-slash"></i>
-          <h3>Frontend</h3>
-          <p>HTML5, CSS3, Bootstrap 5 y JavaScript.</p>
-        </div>
-      </div>
+        <h3>Hardy Pérez León</h3>
 
-      <div class="col-md-4">
-        <div class="tarjeta-tecnologia">
-          <i class="bi bi-server"></i>
-          <h3>Backend</h3>
-          <p>Python, Django, ORM, PostgreSQL y SQLite.</p>
-        </div>
-      </div>
+        <div class="cv-linea"></div>
 
-      <div class="col-md-4">
-        <div class="tarjeta-tecnologia">
-          <i class="bi bi-tools"></i>
-          <h3>Herramientas</h3>
-          <p>Git, GitHub, Visual Studio Code y pgAdmin.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="cv" class="seccion seccion-oscura">
-  <div class="container">
-    <div class="row align-items-center mb-4">
-      <div class="col-lg-8">
-        <h2 class="titulo-seccion">
-          Currículum Vitae
-        </h2>
-
-        <p class="lead">
-          Puedes revisar mi currículum directamente en esta página
-          o descargarlo en formato PDF.
+        <p class="cv-texto">
+          El documento reúne información complementaria sobre mi trayectoria,
+          preparación académica, certificaciones y proyectos profesionales.
         </p>
+
+        <div class="cv-lista">
+
+          <div class="cv-lista-item">
+            <div class="cv-lista-icono">
+              <i class="bi bi-person"></i>
+            </div>
+
+            <div>
+              <strong>Perfil profesional completo</strong>
+              <span>Resumen de experiencia y capacidades clave.</span>
+            </div>
+          </div>
+
+          <div class="cv-lista-item">
+            <div class="cv-lista-icono">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+
+            <div>
+              <strong>Formación y certificaciones</strong>
+              <span>Estudios, cursos y certificaciones relevantes.</span>
+            </div>
+          </div>
+
+          <div class="cv-lista-item">
+            <div class="cv-lista-icono">
+              <i class="bi bi-briefcase"></i>
+            </div>
+
+            <div>
+              <strong>Experiencia laboral detallada</strong>
+              <span>Historial de cargos, responsabilidades y logros.</span>
+            </div>
+          </div>
+
+          <div class="cv-lista-item">
+            <div class="cv-lista-icono">
+              <i class="bi bi-code-slash"></i>
+            </div>
+
+            <div>
+              <strong>Proyectos y competencias digitales</strong>
+              <span>Proyectos destacados y habilidades técnicas.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="cv-botones">
+
+          <a
+            href="{% static 'cv/cv_hardy_perez_leon.pdf' %}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-abrir-cv"
+          >
+            <i class="bi bi-eye-fill"></i>
+            Abrir CV
+          </a>
+
+          <a
+            href="{% static 'cv/cv_hardy_perez_leon.pdf' %}"
+            download
+            class="btn-descargar-cv"
+          >
+            <img
+              src="{% static 'img/acrobat.png' %}"
+              alt=""
+              class="icono-acrobat"
+            >
+            Descargar
+          </a>
+
+        </div>
+
       </div>
 
-      <div class="col-lg-4 text-lg-end">
-        <a
-          href="{% static 'cv/CV_Hardy_Perez.pdf' %}"
-          class="btn btn-primary btn-lg"
-          download
+      <!-- PANEL DERECHO -->
+      <div class="cv-visor">
+
+        <span class="cv-visor-titulo">
+          Vista previa del currículum
+        </span>
+
+      <div class="cv-iframe-contenedor">
+  <iframe
+    src="{% static 'cv/cv_hardy_perez_leon.pdf' %}#toolbar=0&navpanes=0&scrollbar=1"
+    class="cv-iframe"
+    title="Vista previa del currículum de Hardy Pérez León"
+    loading="lazy"
+  ></iframe>
+</div>
+          </div>
+    </div>
+  </div>
+</section>
+<!-- ===================================== -->
+<!-- CONTACTO -->
+<!-- ===================================== -->
+<!-- ===================================== -->
+<!-- CONTACTO -->
+<!-- ===================================== -->
+
+<section id="contacto" class="contact-section">
+
+  <div class="contact-header">
+
+    <span class="section-tag">CONTACTO</span>
+
+    <h2>Hablemos</h2>
+
+    <p>
+      Estoy disponible para colaborar en nuevos proyectos,
+      resolver consultas o conversar sobre oportunidades profesionales.
+    </p>
+
+    <div class="contact-layout">
+
+      <!-- Avión decorativo -->
+      <div class="plane">
+        <i class="fa-solid fa-paper-plane"></i>
+      </div>
+
+      <!-- Iconos de contacto -->
+      <div class="contact-icons">
+
+        <!-- Correo -->
+        <button
+          type="button"
+          class="contact-btn contact-btn-email"
+          data-title="Correo electrónico"
+          data-image="{% static 'logos/email.png' %}"
+          data-text="robinson.leonhp@gmail.com"
+          data-link="mailto:robinson.leonhp@gmail.com"
+          data-action="Enviar correo"
         >
-          <i class="bi bi-download me-2"></i>
-          Descargar CV
-        </a>
+          <img
+            src="{% static 'logos/email.png' %}"
+            alt="Correo electrónico"
+          />
+        </button>
+
+        <!-- WhatsApp -->
+        <button
+          type="button"
+          class="contact-btn contact-btn-whatsapp"
+          data-title="WhatsApp"
+          data-image="{% static 'logos/whatsapp.png' %}"
+          data-text="+56 9 5184 9450"
+          data-link="https://wa.me/56951849450"
+          data-action="Abrir WhatsApp"
+        >
+          <img
+            src="{% static 'logos/whatsapp.png' %}"
+            alt="WhatsApp"
+          />
+        </button>
+
+        <!-- Ubicación -->
+        <button
+          type="button"
+          class="contact-btn contact-btn-location"
+          data-title="Ubicación"
+          data-image="{% static 'logos/ubicacion.png' %}"
+          data-text="Puerto Varas, Chile"
+          data-link="https://www.google.com/maps/search/?api=1&query=Puerto+Varas+Chile"
+          data-action="Ver ubicación"
+        >
+          <img
+            src="{% static 'logos/ubicacion.png' %}"
+            alt="Ubicación"
+          />
+        </button>
+
+        <!-- GitHub -->
+        <button
+          type="button"
+          class="contact-btn contact-btn-github"
+          data-title="GitHub"
+          data-image="{% static 'logos/github.png' %}"
+          data-text="github.com/Hardy-Perez-Leon"
+          data-link="https://github.com/Hardy-Perez-Leon"
+          data-action="Ver GitHub"
+        >
+          <img
+            src="{% static 'logos/github.png' %}"
+            alt="GitHub"
+          />
+        </button>
+
+        <!-- LinkedIn -->
+        <button
+          type="button"
+          class="contact-btn contact-btn-linkedin"
+          data-title="LinkedIn"
+          data-image="{% static 'logos/linkedin.png' %}"
+          data-text="linkedin.com/in/hardy-perez-leon"
+          data-link="https://linkedin.com/in/hardy-perez-leon"
+          data-action="Ver LinkedIn"
+        >
+          <img
+            src="{% static 'logos/linkedin.png' %}"
+            alt="LinkedIn"
+          />
+        </button>
+
+        <!-- CV -->
+        <button
+          type="button"
+          class="contact-btn contact-btn-cv"
+          data-title="Currículum Vitae"
+          data-image="{% static 'img/acrobat.png' %}"
+          data-text="CV de Hardy Pérez León"
+          data-link="{% static 'cv/cv_hardy_perez_leon.pdf' %}"
+          data-action="Ver CV"
+        >
+          <img
+            src="{% static 'img/acrobat.png' %}"
+            alt="Currículum Vitae"
+          />
+        </button>
+
       </div>
+
     </div>
 
-    <div class="cv-visor">
-      <iframe
-        src="{% static 'cv/CV_Hardy_Perez.pdf' %}"
-        title="Currículum Vitae de Hardy Pérez"
-        loading="lazy"
+  </div>
+
+  <!-- Tarjeta dinámica -->
+  <div class="contact-card" id="contactCard" hidden>
+
+    <button
+      type="button"
+      class="contact-card-close"
+      id="contactCardClose"
+      aria-label="Cerrar información"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="contact-card-image">
+      <img
+        id="cardImage"
+        src=""
+        alt=""
+      />
+    </div>
+
+    <h3 id="cardTitle"></h3>
+
+    <div class="contact-card-information">
+      <i class="fa-regular fa-envelope" id="cardSmallIcon"></i>
+      <p id="cardText"></p>
+    </div>
+
+    <div class="contact-card-actions">
+
+      <button
+        type="button"
+        id="copyContact"
+        class="contact-action contact-action-secondary"
       >
-      </iframe>
-    </div>
+        <i class="fa-regular fa-copy"></i>
+        Copiar
+      </button>
 
-    <div class="text-center mt-4">
       <a
-        href="{% static 'cv/CV_Hardy_Perez.pdf' %}"
-        class="btn btn-outline-light"
+        id="cardLink"
+        class="contact-action contact-action-primary"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="bi bi-box-arrow-up-right me-2"></i>
-        Abrir CV en una pestaña nueva
+        Abrir
       </a>
-    </div>
-  </div>
-</section>
-  <div class="container text-center">
-    <h2 class="titulo-seccion titulo-centrado">Currículum Vitae</h2>
 
-    <p class="mb-4">
-      Descarga mi currículum para conocer en detalle mi experiencia, formación y
-      competencias.
+    </div>
+
+    <span
+      id="copyMessage"
+      class="copy-message"
+      aria-live="polite"
+    ></span>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="contact-footer">
+    <p>
+      © 2026 Hardy Pérez León
+      <span>•</span>
+      Desarrollado con Django
+      <span>•</span>
+      Bootstrap
+      <span>•</span>
+      PostgreSQL
+      <span>•</span>
+      Gracias por visitar mi portafolio.
     </p>
+  </footer>
 
-    <a
-      href="{% static 'cv/CV_Hardy_Perez.pdf' %}"
-      class="btn btn-primary btn-lg"
-      download
-    >
-      <i class="bi bi-download me-2"></i>
-      Descargar CV
-    </a>
-  </div>
-</section>
-
-<section id="contacto" class="seccion seccion-azulada">
-  <div class="container">
-    <h2 class="titulo-seccion">Contacto</h2>
-
-    <div class="row g-4">
-      <div class="col-lg-7">
-        <p class="lead">
-          Estoy disponible para oportunidades relacionadas con desarrollo web,
-          laboratorio, control de calidad y tecnología.
-        </p>
-
-        <p>
-          <i class="bi bi-geo-alt me-2"></i>
-          Puerto Varas, Chile
-        </p>
-
-        <p>
-          <i class="bi bi-envelope me-2"></i>
-          robinson.leonhp@gmail.com
-        </p>
-
-        <p>
-          <i class="bi bi-github me-2"></i>
-          github.com/Hardy-Perez-Leon
-        </p>
-
-        <p>
-          <i class="bi bi-linkedin me-2"></i>
-          LinkedIn
-        </p>
-      </div>
-    </div>
-  </div>
 </section>
 
 {% endblock %}
