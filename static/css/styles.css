@@ -138,23 +138,20 @@ a {
 
 .hero {
   position: relative;
-
   overflow: hidden;
 
-  min-height: 750px;
+  min-height: calc(100vh - var(--navbar-altura));
+  padding: 35px 0 25px;
 
-  padding-top: 20px;
-
-  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
 
   background:
     linear-gradient(rgba(2, 10, 20, 0.72), rgba(2, 10, 20, 0.82)),
     url("../img/adn-fondo.png");
 
   background-size: cover;
-
   background-position: center;
-
   background-repeat: no-repeat;
 }
 
@@ -189,7 +186,7 @@ a {
 
 .hero-etiqueta {
   display: inline-block;
-  margin-bottom: 23px;
+  margin-bottom: 14px;
   padding: 8px 16px;
   border: 1px solid rgba(91, 192, 255, 0.45);
   border-radius: 999px;
@@ -203,7 +200,7 @@ a {
 
 .hero-titulo {
   max-width: 600px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   color: #ffffff;
   font-size: clamp(3.6rem, 6vw, 6rem);
   font-weight: 300;
@@ -219,10 +216,10 @@ a {
 
 .hero-descripcion {
   max-width: 650px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   color: var(--texto-suave);
   font-size: 1.08rem;
-  line-height: 1.75;
+  line-height: 1.55;
 }
 
 .hero-anios {
@@ -283,7 +280,7 @@ REDES HERO
 
   gap: 18px;
 
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .hero-redes a {
@@ -304,14 +301,6 @@ REDES HERO
   border: 1px solid rgba(255, 255, 255, 0.08);
 
   transition: 0.35s;
-}
-
-.hero-redes {
-  display: flex;
-
-  gap: 18px;
-
-  margin-top: 30px;
 }
 
 .hero-redes a {
@@ -359,27 +348,30 @@ REDES HERO
 
 .foto-wrapper {
   position: relative;
-  width: 390px;
-  height: 430px;
+  width: 350px;
+  height: 390px;
   margin: 0 auto;
 }
 
 .foto-contenedor {
   position: absolute;
-  top: 18px;
+  top: 10px;
   left: 50%;
   z-index: 3;
-  width: 350px;
-  height: 390px;
+
+  width: 320px;
+  height: 355px;
   padding: 6px;
+
   overflow: hidden;
   border-radius: 50%;
+
   background: linear-gradient(135deg, #1688ff, #63cfff);
+
   box-shadow:
     0 0 30px rgba(45, 150, 255, 0.35),
-    0 0 80px rgba(45, 150, 255, 0.28),
-    0 0 140px rgba(45, 150, 255, 0.18);
-  transition: 0.5s;
+    0 0 80px rgba(45, 150, 255, 0.28);
+
   transform: translateX(-50%);
 }
 
@@ -433,61 +425,50 @@ REDES HERO
 }
 
 /* ========================================
-   FOOTER
-======================================== */
-
-/* ========================================
-   RESPONSIVE
-======================================== */
-
-/* ========================================
    ESTADÍSTICAS
 ======================================== */
 
 .estadisticas {
   position: relative;
   z-index: 5;
-  margin-top: -45px;
-  padding-bottom: 55px;
+
+  margin-top: 20px;
+  padding: 0 0 20px;
 
   background: transparent;
-
-  margin-top: 0;
-
-  padding-top: 0;
 }
 
 .estadistica-card {
   display: flex;
-  min-height: 135px;
-  height: 100%;
   align-items: center;
-  gap: 20px;
-  padding: 24px;
+  gap: 14px;
+
+  min-height: 95px;
+  height: 100%;
+
+  padding: 16px 18px;
+
   border: 1px solid var(--borde);
   border-radius: 14px;
+
   background: linear-gradient(
     145deg,
     rgba(14, 32, 53, 0.98),
     rgba(5, 18, 34, 0.96)
   );
+
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+
   transition:
     transform 0.25s ease,
     border-color 0.25s ease,
     box-shadow 0.25s ease;
-  padding-bottom: 55px;
-
-  background: transparent;
-
-  margin-top: 0;
-
-  padding-top: 0;
 }
 
 .estadistica-card:hover {
   border-color: var(--azul);
-  transform: translateY(-6px);
+  transform: translateY(-5px);
+
   box-shadow:
     0 22px 48px rgba(0, 0, 0, 0.34),
     0 0 24px rgba(22, 136, 255, 0.08);
@@ -495,17 +476,21 @@ REDES HERO
 
 .estadistica-icono {
   display: inline-flex;
-  width: 62px;
-  height: 62px;
-  flex: 0 0 62px;
+
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+
   align-items: center;
   justify-content: center;
+
   border: 1px solid rgba(22, 136, 255, 0.45);
   border-radius: 50%;
+
   color: var(--azul-claro);
   background: rgba(22, 136, 255, 0.1);
-  font-size: 1.75rem;
-  box-shadow: 0 0 22px rgba(22, 136, 255, 0.12);
+
+  font-size: 1.35rem;
 }
 
 .estadistica-contenido {
@@ -515,16 +500,16 @@ REDES HERO
 
 .estadistica-contenido strong {
   color: #ffffff;
-  font-size: 2.35rem;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 600;
   line-height: 1;
 }
 
 .estadistica-contenido span {
-  margin-top: 8px;
+  margin-top: 5px;
   color: var(--texto-suave);
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.78rem;
+  line-height: 1.2;
 }
 
 @media (max-width: 991px) {
@@ -1362,7 +1347,7 @@ PROYECTOS
 }
 
 .hero-estadisticas .container {
-  max-width: 1120px;
+  max-width: 900px;
 }
 
 .hero-estadisticas .estadistica-card {
