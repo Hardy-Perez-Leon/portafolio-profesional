@@ -2055,14 +2055,6 @@ section {
   z-index: 1;
 }
 
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(2, 11, 22, 0.12);
-  pointer-events: none;
-  z-index: -1;
-}
 @keyframes brilloLinea {
   0% {
     filter: brightness(0.8);
@@ -2076,23 +2068,7 @@ section::before {
     filter: brightness(0.8);
   }
 }
-section::after {
-  content: "";
 
-  position: absolute;
-
-  left: 8%;
-
-  right: 8%;
-
-  bottom: 0;
-
-  height: 1px;
-
-  background: linear-gradient(90deg, transparent, #2db7ff, transparent);
-
-  opacity: 0.35;
-}
 /* ======================================================
    PREVISUALIZACIÓN DEL CURRÍCULUM
 ====================================================== */
@@ -3633,5 +3609,153 @@ body #contacto .copy-message {
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ========================================
+   CV RESPONSIVO
+======================================== */
+
+.cv-section {
+  padding: 60px 0;
+  background: transparent;
+}
+
+.cv-moderno {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.cv-informacion,
+.cv-visor {
+  min-width: 0;
+}
+
+.cv-visor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px 28px;
+
+  background: transparent;
+}
+
+.cv-iframe-contenedor {
+  width: 100%;
+  height: 620px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 153, 255, 0.45);
+  border-radius: 12px;
+
+  background: #ffffff;
+}
+
+.cv-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  background: #ffffff;
+}
+
+.cv-abrir-movil {
+  display: none;
+
+  margin-top: 14px;
+  padding: 11px 17px;
+
+  border: 1px solid rgba(91, 192, 255, 0.45);
+  border-radius: 8px;
+
+  color: #ffffff;
+  background: rgba(22, 136, 255, 0.1);
+
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .cv-moderno {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-informacion {
+    border-right: 0;
+  }
+
+  .cv-visor {
+    padding: 20px 0 0;
+  }
+
+  .cv-iframe-contenedor {
+    height: 720px;
+  }
+}
+
+/* Celular */
+@media (max-width: 576px) {
+  .cv-section {
+    padding: 40px 0;
+  }
+
+  .cv-moderno {
+    display: block;
+    padding: 0;
+  }
+
+  .cv-informacion {
+    padding: 0;
+  }
+
+  .cv-botones {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-visor {
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .cv-visor-titulo {
+    margin-bottom: 12px;
+  }
+
+  .cv-iframe-contenedor {
+    width: 100%;
+    height: 520px;
+    border-radius: 10px;
+  }
+
+  .cv-iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cv-abrir-movil {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 390px) {
+  .cv-iframe-contenedor {
+    height: 470px;
+  }
+
+  .cv-informacion h3 {
+    font-size: 2rem;
   }
 }
